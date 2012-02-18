@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>First name:</b>
+  <%= @author.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @author.last_name %>
+</p>
+
+<p>
+  <b>Birth date:</b>
+  <%= @author.birth_date %>
+</p>
+
+<p>
+  <b>Birth city:</b>
+  <%= @author.birth_city %>
+</p>
+
+<p>
+  <b>Birth country:</b>
+  <%= @author.birth_country %>
+</p>
+
+<% if @author.books.count > 0 then %>
+<table>
+<th>Books</th>
+<% @author.books.collect{|book| book.title }.sort.each do %>
+<tr><td><%= book_title %></td></tr>
+<% end %>
+</table>
+<% else %>
+<p>This author has no books.</p>
+<% end %>
+
+<%= link_to 'Edit', edit_author_path(@author) %> 
+<%= link_to 'Back', authors_path %>

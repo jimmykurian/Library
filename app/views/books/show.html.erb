@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @book.title %>
+</p>
+
+<p>
+  <b>Publication date:</b>
+  <%= @book.publication_date %>
+</p>
+
+<p>
+  <b>Length in pages:</b>
+  <%= @book.length_in_pages %>
+</p>
+
+<p>
+  <b>Language:</b>
+  <%= @book.language %>
+</p>
+
+<% if @book.authors.count > 0 then %>
+<table>
+<th>Author</th>
+<% @book.authors.collect{|author| author.last_first_name}.sort.each do |author_name| %>
+<tr><td><%= author_name %></td></tr>
+	<% end %>
+</table>
+<% else %>
+<p>This book has no authors.</p>
+<% end %>
+
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>

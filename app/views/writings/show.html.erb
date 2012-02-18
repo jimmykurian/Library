@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+<table>
+<th>Author</th>&nbsp <th>Book</th>
+<% @book.authors.collect {|author| author.last_first_name }.sort.each do %>
+<tr><td><%= author_name %></td></tr>
+<% end %>
+</table>
+</p>
+
+
+<%= link_to 'Edit', edit_writing_path(@writing) %> |
+<%= link_to 'Back', writings_path %>

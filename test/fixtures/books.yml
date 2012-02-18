@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  publication_date: 2012-01-09
+  length_in_pages: 1
+  language: MyString
+
+two:
+  title: MyString
+  publication_date: 2012-01-09
+  length_in_pages: 1
+  language: MyString
